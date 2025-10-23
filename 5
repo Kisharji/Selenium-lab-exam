@@ -1,0 +1,43 @@
+package labprg;
+
+import org.openqa.selenium.By;
+
+import org.openqa.selenium. WebDriver;
+
+import org.openqa.selenium.chrome.
+
+import org.openqa.selenium.support.
+
+public class prg5 {
+
+public static void main(String[] args) throws InterruptedException {
+
+// TODO Auto-generated method stub
+
+System.setProperty("webdriver.,"/home/skasc/);
+
+WebDriver driver = new ChromeDriver();
+
+driver.get("https://portal2.");
+
+driver. manage().window().maximize();
+
+Select passportoffice = new Select(driver.
+
+findElement (By.name ("dcdrLocation")));
+
+passportoffice.selectByIndex(
+
+Thread.sleep(2000);
+
+passportoffice.selectByValue(");
+
+Thread.sleep(2000);
+
+passportoffice. "Chennai")
+
+Thread.sleep(2080);
+
+}
+
+}
