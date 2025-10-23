@@ -1,0 +1,51 @@
+package program4;
+
+
+import org.openqa.selenium.By;
+
+import org.openqa.selenium.Keys;
+
+import org.openqa.selenium.WebDriver;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+
+
+public class Program4 {
+
+    public static void main(String[] args) {
+
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Hxtreme\\Desktop\\chromedriver.exe");
+
+        WebDriver driver = new ChromeDriver();
+
+
+        driver.get("https://www.google.com");
+
+
+        // Search for Facebook
+
+        driver.findElement(By.name("q")).sendKeys("facebook" + Keys.ENTER);
+
+
+        // Click on the link using partial link text
+
+        driver.findElement(By.partialLinkText("Facebook - log in or sign")).click();
+
+
+        // Enter login credentials
+
+        driver.findElement(By.id("email")).sendKeys("@gmail.com");
+
+        driver.findElement(By.id("pass")).sendKeys("abc" + Keys.ENTER);
+
+
+        System.out.println("Facebook login attempted successfully!");
+
+
+        // Optional: close browser
+
+        // driver.quit();
+
+    }
+
+}
