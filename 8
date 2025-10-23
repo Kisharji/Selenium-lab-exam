@@ -1,0 +1,49 @@
+package mynewproj;
+
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+
+import org.openqa.selenium.WebDriver;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+
+
+public class implicit {
+
+    public static void main(String[] args) {
+
+        // Set path of ChromeDriver
+
+        System.setProperty("webdriver.chrome.driver", "/home/skasc/Downloads/chromedriver");
+
+
+        WebDriver driver = new ChromeDriver();
+
+
+        // Implicit wait
+
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
+
+        // Open the demo page
+
+        driver.get("https://demoqa.com/dynamic-properties");
+
+        driver.manage().window().maximize();
+
+
+        // Click on the button which becomes visible after 5 seconds
+
+        driver.findElement(By.id("visibleAfter")).click();
+
+
+        System.out.println("Button clicked successfully after implicit wait!");
+
+
+        driver.close();
+
+    }
+
+}
