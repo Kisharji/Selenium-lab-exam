@@ -1,0 +1,71 @@
+package project;
+
+
+import org.openqa.selenium.Alert;
+
+import org.openqa.selenium.By;
+
+import org.openqa.selenium.WebDriver;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+
+
+public class explicit {
+
+    public static void main(String[] args) throws InterruptedException {
+
+        // Set path for ChromeDriver
+
+        System.setProperty("webdriver.chrome.driver", "/home/skasc/Downloads/chromedriver");
+
+
+        WebDriver driver = new ChromeDriver();
+
+        driver.manage().window().maximize();
+
+
+        // Open the demo page
+
+        driver.get("https://demo.guru99.com/test/delete_customer.php");
+
+
+        // Enter customer ID
+
+        driver.findElement(By.name("cusid")).sendKeys("53920");
+
+
+        // Click submit
+
+        driver.findElement(By.name("submit")).submit();
+
+
+        // Switch to alert
+
+        Alert alert = driver.switchTo().alert();
+
+
+        // Get alert message
+
+        String alertMessage = alert.getText();
+
+        System.out.println("Alert message: " + alertMessage);
+
+
+        // Wait 10 seconds (optional)
+
+        Thread.sleep(10000);
+
+
+        // Accept the alert
+
+        alert.accept();
+
+
+        System.out.println("Alert accepted successfully!");
+
+
+        driver.quit();
+
+    }
+
+}
